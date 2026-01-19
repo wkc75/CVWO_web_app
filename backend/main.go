@@ -7,6 +7,15 @@ import (
 )
 
 func main() {
+	// initialise db
+	db, err := initDB()
+	if err != nil {
+		fmt.Println("Failed to initiate DB", err)
+		return
+	}
+	defer db.Close()
+
+	// test route
 	http.HandleFunc("/health", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintln(w, "ok")
 	})

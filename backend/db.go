@@ -2,8 +2,8 @@ package main
 
 import (
 	"database/sql"
-	"fmt"
-	"os"
+	"fmt" // for printing
+	"os"  //use the read files
 
 	_ "github.com/mattn/go-sqlite3"
 )
