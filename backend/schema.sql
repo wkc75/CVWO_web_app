@@ -1,6 +1,3 @@
-cd /workspace/forum-web-app-rebuild/backend
-cat <<'EOF' > schema.sql
--- Users (username-only auth)
 CREATE TABLE IF NOT EXISTS users (
   username TEXT PRIMARY KEY
 );
@@ -34,4 +31,3 @@ CREATE TABLE IF NOT EXISTS comments (
   FOREIGN KEY (post_id) REFERENCES posts(id),
   FOREIGN KEY (creator_username) REFERENCES users(username)
 );
-EOF
